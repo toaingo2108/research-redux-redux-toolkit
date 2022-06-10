@@ -72,7 +72,7 @@ function Counter() {
 ![markdown](/img/image1.png)
 
 `Redux`
-![markdown](/img/image2.png)
+![markdown](/img/image3.gif)
 
 ### Immutability (bất biến)
 
@@ -301,7 +301,7 @@ const handleSearchTextChange = (e) => {
 }
 ```
 
-![dispatch](/img/image3.png)
+![dispatch](/img/image3.gif)
 
 ---
 

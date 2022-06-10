@@ -69,10 +69,17 @@ function Counter() {
 }
 ```
 
+---
+
+### Luồng hoạt động
+
 ![markdown](/img/image1.png)
 
-`Redux`
+#### Khi sử dụng Redux
+
 ![markdown](/img/image3.gif)
+
+---
 
 ### Immutability (bất biến)
 
@@ -132,46 +139,6 @@ const arr2 = arr.concat('c')
 const arr3 = arr.slice()
 // and mutate the copy:
 arr3.push('c')
-```
-
----
-
-#### Config Store `store.js`
-
-```js
-// Redux Core
-import { combineReducers, createStore } from 'redux'
-import filtersReducer from '../components/Filters/FiltersSlice'
-import todoListReducer from '../components/TodoList/TodosSlice'
-
-import { composeWithDevTools } from 'redux-devtools-extension'
-
-const composedEnhancers = composeWithDevTools()
-
-const rootReducer = combineReducers({
-  filters: filtersReducer,
-  todoList: todoListReducer,
-})
-
-const store = createStore(rootReducer, composedEnhancers)
-
-export default store
-```
-
-```js
-// Redux Toolkit
-import { configureStore } from '@reduxjs/toolkit'
-import filtersSlice from '../components/Filters/filtersSlice'
-import todosSlice from '../components/TodoList/todosSlice'
-
-const store = configureStore({
-  reducer: {
-    filters: filtersSlice.reducer,
-    todoList: todosSlice.reducer,
-  },
-})
-
-export default store
 ```
 
 ---
@@ -269,6 +236,46 @@ export default createSlice({
 
 ---
 
+#### Config Store `store.js`
+
+```js
+// Redux Core
+import { combineReducers, createStore } from 'redux'
+import filtersReducer from '../components/Filters/FiltersSlice'
+import todoListReducer from '../components/TodoList/TodosSlice'
+
+import { composeWithDevTools } from 'redux-devtools-extension'
+
+const composedEnhancers = composeWithDevTools()
+
+const rootReducer = combineReducers({
+  filters: filtersReducer,
+  todoList: todoListReducer,
+})
+
+const store = createStore(rootReducer, composedEnhancers)
+
+export default store
+```
+
+```js
+// Redux Toolkit
+import { configureStore } from '@reduxjs/toolkit'
+import filtersSlice from '../components/Filters/filtersSlice'
+import todosSlice from '../components/TodoList/todosSlice'
+
+const store = configureStore({
+  reducer: {
+    filters: filtersSlice.reducer,
+    todoList: todosSlice.reducer,
+  },
+})
+
+export default store
+```
+
+---
+
 #### Dispatch
 
 ```js
@@ -300,8 +307,6 @@ const handleSearchTextChange = (e) => {
   dispatch(filtersSlice.actions.searchFilterChange(e.target.value))
 }
 ```
-
-![dispatch](/img/image3.gif)
 
 ---
 

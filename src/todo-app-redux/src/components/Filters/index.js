@@ -29,7 +29,7 @@ export default function Filters() {
   }
 
   return (
-    <Row justify='center'>
+    <Row justifyContent='center'>
       <Col span={24}>
         <Typography.Paragraph
           style={{ fontWeight: 'bold', marginBottom: 3, marginTop: 10 }}
